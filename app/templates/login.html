@@ -1,5 +1,12 @@
 {% extends "base.html" %}
 {% block content %}
+
+    <div class="row text-center">
+      <div class="col-md-12">
+        <h1>{{ title }}</h1>
+      </div>
+    </div>
+
     <div class="row">
       <div class="col-md-4">
         <!--Empty column-->
@@ -37,7 +44,7 @@
           <p>
             <a href="{{url_for('register')}}">Register</a>
           </p>
-              </form>
+        </form>
       </div>
       <div class="col-md-4">
         <!--Empty column-->

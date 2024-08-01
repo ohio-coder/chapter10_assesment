@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% block content %}
     <div class="row">
-      <h3>hello below are your realestate properties</h3>
+      <h3>hello {{ current_user.username }} below are your realestate properties</h3>
       <div class="col-md-6">
         <img src=" {{ url_for('static', filename='img/3.png') }} ">
         <img src=" {{ url_for('static', filename='img/4.png') }} ">

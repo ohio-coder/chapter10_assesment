@@ -11,20 +11,23 @@ def index():
     """Index URL"""
     return render_template('index.html' , title="Home page")
 
+# ======
+# REMOVE THIS
+# ======
+# @app.route('/register')
+# def register():
+#     """Register URL"""
+#     form = RegisterForm()
+#     if form.validate_on_submit():
+#         flash(f'Welcome {form.username.data}')
+#         return redirect(url_for('index'))
 
-@app.route('/register')
-def register():
-    """Register URL"""
-    form = RegisterForm()
-    if form.validate_on_submit():
-        flash(f'Welcome {form.username.data}')
-        return redirect(url_for('index'))
-
-    return render_template('register.html' , title="Register page", form=form)
+#     return render_template('register.html' , title="Register page", form=form)
 
 
 
 @app.route('/logout')
+@login_required
 def logout():
     logout_user()
     return redirect(url_for('login'))
@@ -36,7 +39,7 @@ def about_me():
     return render_template('about_me.html', title="About me")
 
 @app.route('/register' , methods=['GET','POST'])
-def Register():
+def register():
     """Register URL"""
     form = RegisterForm()
     if form.validate_on_submit():
